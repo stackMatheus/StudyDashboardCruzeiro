@@ -3,7 +3,7 @@
  * TEMA: StudyFlow Dashboard - Ferramenta de Produtividade para Estudos
  *
  * AUTOR: Matheus Dos Santos Sousa
- * RGM: [45105774
+ * RGM: [45105774]
  *
  * STACK TECNOLÓGICO:
  * - Lógica de Programação: JavaScript (Vanilla)
@@ -386,3 +386,4 @@ window.allowDrop = allowDrop;
 window.drop = drop;
 window.deleteTask = deleteTask;
 window.changeTaskStatus = changeTaskStatus;
+
