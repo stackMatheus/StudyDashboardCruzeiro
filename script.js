@@ -1,3 +1,19 @@
+/*******************************************************************************
+ * PROJETO INTEGRADOR TRANSDISCIPLINAR II (PIT II) - ENGENHARIA DE SOFTWARE
+ * TEMA: StudyFlow Dashboard - Ferramenta de Produtividade para Estudos
+ *
+ * AUTOR: Matheus Dos Santos Sousa
+ * RGM: [45105774
+ *
+ * STACK TECNOLÓGICO:
+ * - Lógica de Programação: JavaScript (Vanilla)
+ * - Persistência: LocalStorage do Navegador
+ * - Funções Principais: Kanban (Drag-and-Drop), Pomodoro (Timer), Flashcards.
+ *
+ * OBJETIVO:
+ * Implementar toda a lógica de estado, persistência de dados (tarefas, cards),
+ * controle de eventos (cliques, drag and drop) e manipulação do DOM.
+ *******************************************************************************/
 // --- VARIÁVEIS DO DOM (KANBAN E PROG) ---
 const addTaskBtn = document.getElementById('add-task-btn');
 const newTaskInput = document.getElementById('new-task-input');
