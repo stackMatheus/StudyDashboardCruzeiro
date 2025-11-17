@@ -1,0 +1,357 @@
+/* ========================================================= */
+/* 1. VARIÁVEIS CSS (TEMA DARK MODE) */
+/* ========================================================= */
+
+:root {
+    /* DARK MODE */
+    --font-primary: 'Poppins', sans-serif;
+    --background-color: #1a1a2e; /* Fundo principal (roxo escuro/azul marinho) */
+    --text-color: #e0e0e0; /* Texto claro */
+    --header-bg: #2a2a4a; /* Fundo do cabeçalho */
+    --column-bg: #2a2a4a; /* Fundo das colunas e seções */
+    --task-bg: #343a59; /* Fundo dos cards de tarefas */
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Sombra mais escura */
+    
+    /* Cores de Ação e Prioridade (Mantidas para contraste) */
+    --high-priority: #ff6b6b; /* Vermelho mais brilhante */
+    --medium-priority: #ffd966; /* Amarelo */
+    --low-priority: #4dd088; /* Verde */
+    --button-primary: #5d5d81; /* Botão principal (mais neutro) */
+    --button-hover: #7b7b9c; 
+    --disabled-bg: #494966;
+}
+
+/* ========================================================= */
+/* 2. ESTILOS GLOBAIS E CABEÇALHO */
+/* ========================================================= */
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.4s, color 0.4s;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--header-bg);
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+/* ========================================================= */
+/* 3. LAYOUT PRINCIPAL E INPUTS */
+/* ========================================================= */
+
+.dashboard {
+    padding: 40px 80px;
+}
+
+.progress-and-timer-container {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.progress-section, .pomodoro-timer, .flashcards-section {
+    background-color: var(--column-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 30px;
+    transition: background-color 0.4s;
+}
+
+.progress-section {
+    flex: 2;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-top: 0;
+    padding-bottom: 10px;
+}
+
+.add-task-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Estilos de Input/Select */
+#new-task-input, #new-task-priority, #flashcard-input { 
+    padding: 12px;
+    border: 1px solid #494966; 
+    border-radius: 8px;
+    background-color: var(--task-bg); /* Fundo dos inputs escuro */
+    color: var(--text-color);
+    transition: border-color 0.2s;
+}
+#new-task-input, #flashcard-input {
+    flex-grow: 1;
+}
+#new-task-input:focus, #flashcard-input:focus {
+    border-color: var(--low-priority);
+    outline: none;
+}
+
+/* Estilos de Botão */
+#add-task-btn, .timer-controls button, #add-flashcard-btn, .review-buttons button {
+    background-color: var(--button-primary);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.1s;
+}
+#add-task-btn:hover:not(:disabled), .timer-controls button:hover:not(:disabled),
+#add-flashcard-btn:hover:not(:disabled), .review-buttons button:hover:not(:disabled) {
+    background-color: var(--button-hover);
+    transform: translateY(-1px);
+}
+
+.timer-controls button:disabled {
+    background-color: var(--disabled-bg);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ========================================================= */
+/* 4. POMODORO TIMER E PROGRESSO */
+/* ========================================================= */
+
+.progress-bar-container {
+    background-color: #494966; 
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 25px;
+    overflow: hidden;
+}
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: var(--low-priority); 
+    transition: width 0.6s ease-in-out;
+}
+
+.pomodoro-timer {
+    flex: 1;
+    text-align: center;
+}
+
+.timer-display {
+    font-size: 5em;
+    font-weight: 700;
+    margin: 20px 0;
+    color: var(--high-priority); 
+    letter-spacing: 3px;
+    transition: color 0.4s;
+}
+
+#timer-status {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    font-style: italic;
+    color: var(--text-color);
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pomodoro-timer h2::before {
+    content: "🍅";
+    font-size: 1.2em;
+}
+
+/* ========================================================= */
+/* 5. ESTILOS DE FLASHCARD (VISUAL BONITO) */
+/* ========================================================= */
+
+.flashcards-section {
+    margin-bottom: 40px; /* Mantém o espaçamento antes do Kanban */
+    /* Já usa var(--column-bg) do bloco 3 para o fundo escuro */
+}
+
+.flashcard-review-container {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.flashcard-card {
+    background-color: var(--task-bg);
+    border: 1px solid #494966;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra mais destacada no dark mode */
+    min-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--low-priority); /* Dá destaque ao texto do card */
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.flashcard-card:hover {
+    transform: scale(1.02); /* Leve aumento no hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.review-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px; /* Espaço entre botões de revisão e controles de adicionar */
+}
+
+.flashcard-controls {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #494966; /* Linha sutil para separar as funcionalidades */
+}
+
+
+/* ========================================================= */
+/* 6. KANBAN E CARDS */
+/* ========================================================= */
+
+.kanban-container {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.kanban-column {
+    min-width: 320px;
+    flex-basis: 33.33%;
+    background-color: var(--column-bg);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    transition: background-color 0.4s;
+}
+
+.kanban-column h3 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.3em;
+    color: var(--text-color);
+    padding-bottom: 15px;
+    margin-top: 0;
+    border-bottom: 2px solid #494966;
+    margin-bottom: 15px;
+}
+
+.task-list {
+    min-height: 150px;
+    padding: 5px 0;
+}
+
+.task-card {
+    background-color: var(--task-bg);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    cursor: grab;
+    border-left: 8px solid;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.4s;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.task-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.task-card span {
+    font-weight: 600;
+    flex-basis: 100%;
+}
+.task-card .priority-tag {
+    font-size: 0.8em;
+    margin: 8px 0 0 0;
+    color: #a0a0a0; 
+}
+
+/* Cores da Prioridade */
+.high-priority { border-left-color: var(--high-priority); }
+.medium-priority { border-left-color: var(--medium-priority); }
+.low-priority { border-left-color: var(--low-priority); }
+
+.task-card button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-weight: bold;
+    opacity: 0.6;
+    transition: opacity 0.2s, color 0.2s;
+    font-size: 1.2em;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.task-card button:hover {
+    opacity: 1;
+    color: var(--high-priority);
+}
+
+/* ========================================================= */
+/* 7. RESPONSIVIDADE (MOBILE) */
+/* ========================================================= */
+
+@media (max-width: 992px) {
+    header, .dashboard {
+        padding: 20px;
+    }
+    
+    .progress-and-timer-container {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    .flashcard-controls {
+        flex-direction: column;
+    }
+    
+    .kanban-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .kanban-column {
+        min-width: 90%; 
+        max-width: 100%;
+    }
+
+    .timer-display {
+        font-size: 4em;
+    }
+}

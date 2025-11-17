@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyFlow Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>StudyFlow Dashboard</h1>
+    </header>
+
+    <main class="dashboard">
+
+        <section class="progress-and-timer-container">
+            
+            <div class="progress-section">
+                <h2>Progresso Geral: <span id="progress-percentage">0%</span></h2>
+                <div class="progress-bar-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+                <div class="add-task-container">
+                    <input type="text" id="new-task-input" placeholder="Nova Tarefa de Estudo">
+                    <select id="new-task-priority">
+                        <option value="high">Alta</option>
+                        <option value="medium" selected>Média</option>
+                        <option value="low">Baixa</option>
+                    </select>
+                    <button id="add-task-btn">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="pomodoro-timer">
+                <h2>🍅 Pomodoro</h2>
+                <div id="timer-display" class="timer-display">25:00</div>
+                <p id="timer-status">Foco</p>
+                <div class="timer-controls">
+                    <button id="start-btn">Iniciar</button>
+                    <button id="pause-btn" disabled>Pausar</button>
+                    <button id="reset-btn">Resetar</button>
+                </div>
+                <p class="cycles-count">Ciclos Completos: <span id="cycles-count">0</span></p>
+            </div>
+            
+        </section>
+
+        <section class="flashcards-section">
+            <h2>🧠 Flashcards Rápidos</h2>
+            
+            <div class="flashcard-review-container">
+                <div id="flashcard-display" class="flashcard-card" data-side="front">
+                    <p>Adicione cards e clique em "Revisar" para começar!</p>
+                </div>
+                
+                <div class="review-buttons">
+                    <button id="review-flashcard-btn">Revisar</button>
+                    </div>
+            </div>
+
+            <div class="flashcard-controls">
+                <input type="text" id="flashcard-input" placeholder="Frente do Card | Verso do Card">
+                <button id="add-flashcard-btn">Adicionar Card</button>
+            </div>
+        </section>
+
+
+        <section class="kanban-container">
+            <div class="kanban-column" id="todo-column">
+                <h3>📚 A Fazer</h3>
+                <div class="task-list" data-status="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </div>
+            </div>
+
+            <div class="kanban-column" id="in-progress-column">
+                <h3>📝 Em Progresso</h3>
+                <div class="task-list" data-status="in-progress" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </div>
+            </div>
+
+            <div class="kanban-column" id="done-column">
+                <h3>✅ Concluído</h3>
+                <div class="task-list" data-status="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
