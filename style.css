@@ -1,3 +1,18 @@
+/*******************************************************************************
+ * PROJETO INTEGRADOR TRANSDISCIPLINAR II (PIT II) - ENGENHARIA DE SOFTWARE
+ * TEMA: StudyFlow Dashboard - Ferramenta de Produtividade para Estudos
+ *
+ * AUTOR: Matheus Dos Santos Sousa
+ * RGM: 45105774
+ *
+ * STACK TECNOLÓGICO:
+ * - Estilização: CSS3 (Tema Dark Mode)
+ *
+ * OBJETIVO:
+ * Definir o layout (Flexbox/Grid), a paleta de cores (Dark Mode) e a
+ * estilização responsiva para todos os componentes da interface (Kanban,
+ * Pomodoro, Flashcards, Barra de Progresso).
+ *******************************************************************************/
 /* ========================================================= */
 /* 1. VARIÁVEIS CSS (TEMA DARK MODE) */
 /* ========================================================= */
@@ -95,7 +110,7 @@ h2 {
     padding: 12px;
     border: 1px solid #494966; 
     border-radius: 8px;
-    background-color: var(--task-bg); /* Fundo dos inputs escuro */
+    background-color: var(--task-bg); 
     color: var(--text-color);
     transition: border-color 0.2s;
 }
@@ -181,12 +196,11 @@ h2 {
 }
 
 /* ========================================================= */
-/* 5. ESTILOS DE FLASHCARD (VISUAL BONITO) */
+/* 5. ESTILOS DE FLASHCARD */
 /* ========================================================= */
 
 .flashcards-section {
-    margin-bottom: 40px; /* Mantém o espaçamento antes do Kanban */
-    /* Já usa var(--column-bg) do bloco 3 para o fundo escuro */
+    margin-bottom: 40px; 
 }
 
 .flashcard-review-container {
@@ -199,21 +213,21 @@ h2 {
     border: 1px solid #494966;
     padding: 40px 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra mais destacada no dark mode */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     min-height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5em;
     font-weight: 600;
-    color: var(--low-priority); /* Dá destaque ao texto do card */
+    color: var(--low-priority); 
     margin-bottom: 20px;
     cursor: pointer;
     transition: all 0.3s;
 }
 
 .flashcard-card:hover {
-    transform: scale(1.02); /* Leve aumento no hover */
+    transform: scale(1.02); 
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
@@ -221,7 +235,7 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 20px; /* Espaço entre botões de revisão e controles de adicionar */
+    margin-bottom: 20px; 
 }
 
 .flashcard-controls {
@@ -229,7 +243,7 @@ h2 {
     gap: 15px;
     margin-top: 25px;
     padding-top: 15px;
-    border-top: 1px solid #494966; /* Linha sutil para separar as funcionalidades */
+    border-top: 1px solid #494966; 
 }
 
 
