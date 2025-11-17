@@ -1,0 +1,61 @@
+StudyFlow Dashboard - Documentação Resumida (PIT II)
+
+1. Visão Geral do Projeto
+
+O StudyFlow Dashboard é uma Aplicação de Página Única (SPA) desenvolvida para centralizar a produtividade e a organização de estudantes. O objetivo é fornecer uma interface coesa que implementa métodos de gestão de tempo e tarefas para maximizar o foco e a retenção de aprendizado.
+
+Item
+
+Detalhe
+
+Tema
+
+Dashboard de Produtividade Web (Estudos)
+
+Stack Principal
+
+HTML5, CSS3, JavaScript (Vanilla)
+
+Persistência de Dados
+
+LocalStorage do Navegador
+
+Design
+
+Tema Dark Mode, 100% Responsivo (Mobile First)
+
+2. Metodologias e Funcionalidades
+
+A solução integra três metodologias chave de produtividade:
+
+2.1. Kanban Board (Gestão de Fluxo)
+
+Implementação: Três colunas (A Fazer, Em Progresso, Concluído).
+
+Interação: Suporte a Drag-and-Drop para mudança de status e clique rápido no card.
+
+Indicador: Exibe a Prioridade (Alta, Média, Baixa) na borda do card.
+
+Progresso Geral: Inclui uma barra de progresso que calcula a porcentagem de tarefas Concluídas sobre o total.
+
+2.2. Pomodoro Timer (Gestão de Tempo)
+
+Ciclos Padrão: Foco (25 min) e Pausa Curta (5 min).
+
+Lógica: O timer opera de forma autônoma (não bloqueia a UI) e alterna automaticamente entre os modos.
+
+Controle: Botões Iniciar, Pausar e Resetar.
+
+Contagem: Mantém um registro persistente de "Ciclos Completos".
+
+2.3. Flashcards (Memorização)
+
+Criação: Adiciona cards no formato "Frente | Verso".
+
+Revisão: Permite avançar pelos cards.
+
+Interação: O clique no card aciona a função flipFlashcard() para alternar entre a frente e o verso, auxiliando na memorização ativa.
+
+3. Arquitetura e Persistência
+
+A aplicação é puramente Front-end. O JavaScript é responsável por toda a lógica de negócio, desde o cálculo do progresso até a manipulação dos estados do timer. O LocalStorage é utilizado como banco de dados temporário do lado do cliente para garantir que as tarefas, ciclos e flashcards permaneçam salvos mesmo após o usuário fechar e reabrir o navegador.
